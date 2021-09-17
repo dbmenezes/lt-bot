@@ -56,7 +56,7 @@ venom.create().then(function start(client) {
 		{
 			client.reply(message.from, menuRespostas[1], message.id.toString()).then()
 		}
-		else 
+		else if (message.body === '2') 
 		{
 			client.reply(message.from, menuRespostas[2], message.id.toString()).then()
 		}

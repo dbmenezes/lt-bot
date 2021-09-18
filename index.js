@@ -19,25 +19,44 @@ const menuRespostas = {
 
 
 const listaContatos = [
-    {name: 'Daniel Bezerra' , phoneNumber: '5511964452220' }
+    {name: 'Antonio' , phoneNumber: '5521984080735@c.us' }
 ]
 
 
 
-const transmitirMensages = () => {
+const transmitirMensages = (client) => {
 	listaContatos.forEach(contato => {
-        client.sendText(contato.phoneNumber ,`Olá ${contato.name} eu sou o consultor da AUGE , quer saber das opções de festa para esse fim de semana? se sim 
-        digite 1. Caso queira sair da nossa base de dados digite 2
-        `).then()
+        client.sendText(contato.phoneNumber ,`👋 Oi ${contato.name}!`).then()
+		client.sendText(contato.phoneNumber ,`Hoje a Auge convida você a fazer parte do nosso próximo evento 😉`).then()
+		client.sendText(contato.phoneNumber ,`Durante *as próximas 72 horas* você tem acesso exclusivo a nossa *pré venda* ou até os ingressos esgotarem!`).then()
+		client.sendText(contato.phoneNumber ,`
+		🌋AUGE
+
+		📅 XX/XX
+		⏰ Xh
+		
+		Open Bar 
+		
+		🎧
+		.....
+		
+		https://www.ticketplanet.com.br/codigosecreto
+		Código acesso : OAUGE
+		Código desconto : PREAUGE`).then()
+		client.sendText(contato.phoneNumber ,`
+		Gostou dessa notícia e também quer saber a nossa opinião da festa? Digite 1. 
+		Caso não queira mais receber informações digite 2.`).then()
 
     })
+
+	client.sendText(contato.phoneNumber ,`Durante as próximas 72h você tem acesso exclusivo a nossa pré venda ou até os ingressos esgotarem!`).then()
 }
 
 
 
 venom.create().then(function start(client) {
 
-	transmitirMensages();
+	transmitirMensages(client);
 
 
 
